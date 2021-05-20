@@ -2,7 +2,9 @@
 
 This is an AI that gives real-time feedback to the user of how they're performing a body movement (like, workout, dance, etc) against a benchmark video. 
 
-You can give the benchmark video as a pre-saved file, and the user video as either a pre-saved file or with the webcam feed
+You can give the benchmark video as a pre-saved file, and the user video as either a pre-saved file or with the webcam feed.
+
+Its built using [mediapipe](https://github.com/google/mediapipe) in the backend, so 
 
 ## Usage
 
