@@ -73,8 +73,3 @@ def compare_positions(benchmark_video, user_video):
 	benchmark_cam.release()
 	user_cam.release()
 	cv2.destroyAllWindows()
-
-benchmark_video = 'dance_videos/benchmark_dance.mp4'
-user_video = 'dance_videos/right_dance.mp4'
-
-compare_positions(benchmark_video, user_video)
