@@ -19,4 +19,4 @@ compare_positions(benchmark_video, user_video)
 
 <img width="1439" alt="Screenshot 2021-05-20 at 3 24 54 PM" src="https://user-images.githubusercontent.com/39755678/118936981-a1b65b80-b97f-11eb-8d42-ad11afc0bc2e.png">
 
-You can create your own moves with the `create_moves.py` file. It essentially opens the webcam, and then you do your move and save it.
+You can create your own moves with the `create_moves.py` file. It essentially opens the webcam, lets you do your move, and when you're done, you can press `Q` to save it with the supplied name: `create_move('Move 1')`
