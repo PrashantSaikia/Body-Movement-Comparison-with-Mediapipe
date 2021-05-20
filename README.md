@@ -1,4 +1,4 @@
-# Body-Movement-Comparison
+# Body Movement Comparison with Mediapipe
 
 This is an AI that gives real-time feedback to the user of how they're performing a body movement (like, workout, dance, etc) against a benchmark video. 
 
