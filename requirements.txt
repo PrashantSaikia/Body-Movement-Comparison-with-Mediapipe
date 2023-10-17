@@ -2,3 +2,4 @@ opencv-python-headless
 streamlit
 scipy
 fastdtw
+mediapipe
