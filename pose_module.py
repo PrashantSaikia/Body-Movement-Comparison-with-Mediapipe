@@ -16,11 +16,8 @@ class poseDetector():
  
         self.mpDraw = mp.solutions.drawing_utils
         self.mpPose = mp.solutions.pose
-        self.pose = self.mpPose.Pose(self.mode
-                                 , min_detection_confidence=0.5
-                                 , min_tracking_confidence=0.5
-                                 )
- 
+        self.pose = self.mpPose.Pose(self.mode, min_detection_confidence=detectionCon, min_tracking_confidence=trackCon)
+
     def findPose(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.pose.process(imgRGB)
