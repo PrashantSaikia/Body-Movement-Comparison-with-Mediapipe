@@ -28,8 +28,8 @@ def compare_positions(benchmark_video, user_video):
 			cv2.moveWindow(winname, 720,-100)  # Move it to desired location
 			image_1 = cv2.resize(image_1, (720,640))
 			image_1 = detector_1.findPose(image_1)
-			lmList_user = detector_1.findPosition(image_1)
-			del lmList_user[1:11]
+			lmList_user = detector_1.findPosition(image_1, draw=False)
+			# del lmList_user[1:11]
 
 			ret_val_1,image_2 = benchmark_cam.read()
 			#Loop the video if it ended. If the last frame is reached, reset the capture and the frame_counter
@@ -40,8 +40,8 @@ def compare_positions(benchmark_video, user_video):
 
 			image_2 = cv2.resize(image_2, (720,640))
 			image_2 = detector_2.findPose(image_2)
-			lmList_benchmark = detector_2.findPosition(image_2)
-			del lmList_benchmark[1:11]
+			lmList_benchmark = detector_2.findPosition(image_2, draw=False)
+			# del lmList_benchmark[1:11]
 
 			frame_counter += 1
 
@@ -85,3 +85,12 @@ def compare_positions(benchmark_video, user_video):
 	benchmark_cam.release()
 	user_cam.release()
 	cv2.destroyAllWindows()
+
+
+def main():
+	benchmark_video = 'dance_videos/benchmark_dance.mp4'
+	user_video = 'dance_videos/right_dance.mp4' # replace with 0 for webcam
+	compare_positions(benchmark_video, user_video)
+
+if __name__ == "__main__":
+    main()
