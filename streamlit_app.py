@@ -55,17 +55,18 @@ if st.button("Start"):
 		if frameCount % frameSkip == 0:
 			try:
 				ret_val, image_1 = benchmark_cam.read()
-				
+
 				#Loop the video if it ended. If the last frame is reached, reset the capture and the frame_counter
 				if frame_counter == benchmark_cam.get(cv2.CAP_PROP_FRAME_COUNT):
 					frame_counter = 0 #Or whatever as long as it is the same as next line
 					correct_frames = 0
 					benchmark_cam.set(cv2.CAP_PROP_POS_FRAMES, 0)
+					benchmark_cam.set(cv2.CAP_PROP_BUFFERSIZE, 2)
 
 				# image_1 = cv2.resize(image_1, (720,640))
 				image_1 = detector_1.findPose(image_1)
-				lmList_user = detector_1.findPosition(image_1)
-				del lmList_user[1:11]
+				lmList_user = detector_1.findPosition(image_1, draw=False)
+				# del lmList_user[1:11]
 
 				ret_val_1,image_2 = user_cam.read()
 				#Loop the video if it ended. If the last frame is reached, reset the capture and the frame_counter
@@ -73,11 +74,12 @@ if st.button("Start"):
 					frame_counter = 0 #Or whatever as long as it is the same as next line
 					correct_frames = 0
 					user_cam.set(cv2.CAP_PROP_POS_FRAMES, 0)
+					user_cam.set(cv2.CAP_PROP_BUFFERSIZE, 2)
 
 				# image_2 = cv2.resize(image_2, (720,640))
 				image_2 = detector_2.findPose(image_2)
-				lmList_benchmark = detector_2.findPosition(image_2)
-				del lmList_benchmark[1:11]
+				lmList_benchmark = detector_2.findPosition(image_2, draw=False)
+				# del lmList_benchmark[1:11]
 
 				frame_counter += 1
 
