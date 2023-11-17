@@ -42,4 +42,4 @@ In console:
 
 Then create a Kubernetes cluster via the UI, create a deployment with the image pushed, and set the port to 8501.
 
-If you get `Pod errors: Error with exit code 2` or `Does not have minimum availability`, wait for a couple of minutes, wait for the pods to become available, refresh and check again.
+If you get `Pod errors: Error with exit code 2`, `Pod errors: CrashLoopBackOff` or `Does not have minimum availability`, wait for a couple of minutes, wait for the pods to become available, refresh and check again.
