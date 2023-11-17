@@ -26,3 +26,18 @@ You can create your own moves with the `create_moves.py` file. It essentially op
 ```
 streamlit run streamlit_app.py
 ```
+
+# GCP Deployment in Kubernetes Cluster
+
+In console:
+
+```
+1. gcloud services enable containerregistry.googleapis.com
+2. git clone https://github.com/PrashantSaikia/Body-Movement-Comparison-with-Mediapipe.git
+3. cd Body-Movement-Comparison-with-Mediapipe/
+4. docker build -t app .
+5. docker tag app gcr.io/dance-comparison/app
+6. docker push gcr.io/dance-comparison/app
+```
+
+Then create a Kubernetes cluster via the UI, create a deployment with the image pushed, and set the port to 8501.
